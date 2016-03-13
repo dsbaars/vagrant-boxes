@@ -114,7 +114,7 @@
       "http_directory": "http",
       "iso_checksum": "070db3644c39374fdc87fd3de51388dcc0e05b866eaf37f2193d1818f0128e938c42e4eb9f1de555741c143a51edee07903a33271fca2696a771e4ae5c868277",
       "iso_checksum_type": "sha512",
-      "iso_url": "http://cdimage.debian.org/cdimage/release/8.3.0/amd64/iso-cd/{{ user `PACKER_BOX_NAME` }}-netinst.iso",
+      "iso_url": "http://ftp.snt.utwente.nl/pub/os/linux/debian-cd/8.3.0/amd64/iso-cd/{{ user `PACKER_BOX_NAME` }}-netinst.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -125,8 +125,8 @@
       "parallels_tools_guest_path": "prl-tools-{{.Flavor}}.iso",
       "prlctl_version_file": ".prlctl_version",
       "prlctl": [
-        ["set", "{{.Name}}", "--memsize", "1024"],
-        ["set", "{{.Name}}", "--cpus", "2"]
+        ["set", "{{.Name}}", "--memsize", "4096"],
+        ["set", "{{.Name}}", "--cpus", "4"]
       ]
     }
   ],
@@ -142,7 +142,7 @@
         "scripts/vagrant.sh",
         "scripts/vmtools.sh",
         "scripts/ruby.sh",
-        "scripts/chef.sh",
+        "scripts/puppet_pc1.sh",
         "scripts/filesystem.sh",
         "scripts/cleanup.sh"
       ]
